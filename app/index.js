@@ -7,13 +7,24 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.global.css';
+import database from '../db/config';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-const store = configureStore();
-const history = syncHistoryWithStore(hashHistory, store);
+database.then((db) => {
+    const store = configureStore({dashboard: db.get(1)});
+    const history = syncHistoryWithStore(hashHistory, store);
 
-render(
-  <Provider store={store}>
-    <Router history={history} routes={routes} />
-  </Provider>,
-  document.getElementById('root')
-);
+    injectTapEventPlugin();
+    console.log('store and db synced', store)
+    render(
+      <MuiThemeProvider>
+        <Provider store={store}>
+          <Router history={history} routes={routes} />
+        </Provider>
+      </MuiThemeProvider>,
+      document.getElementById('root')
+    );
+  }).catch( (err) => {
+    console.log('error loading DB and setting as initial store:', err);
+  });

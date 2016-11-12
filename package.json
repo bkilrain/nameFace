@@ -1,8 +1,13 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "version": "0.10.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "name_face",
+  "productName": "NameFace",
+  "version": "1.0.0",
+  "description": "Remember names and faces~",
+  "author": {
+    "name": "Brian Kilrain",
+    "email": "bkilrain@gmail.com",
+    "url": "git+https://github.com/bkilrain/nameFace.git"
+  },
   "main": "main.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --retries 2 --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
@@ -60,27 +65,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
-  },
-  "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "url": "git+https://github.com/bkilrain/nameFace.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
+    "url": "git+https://github.com/bkilrain/nameFace/issues"
   },
   "keywords": [
-    "electron",
-    "boilerplate",
-    "react",
-    "react-router",
-    "flux",
-    "webpack",
-    "react-hot"
+    "name",
+    "face",
+    "remember",
+    "nameFace"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "homepage": "null",
   "devDependencies": {
     "asar": "^0.12.3",
     "babel-core": "^6.18.0",
@@ -143,11 +140,14 @@
   "dependencies": {
     "electron-debug": "^1.0.1",
     "font-awesome": "^4.7.0",
+    "lokijs": "^1.4.1",
+    "material-ui": "^0.16.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.0",
     "react-router-redux": "^4.0.6",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "source-map-support": "^0.4.6"

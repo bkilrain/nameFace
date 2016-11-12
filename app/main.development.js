@@ -42,9 +42,12 @@ app.on('ready', async () => {
   await installExtensions();
 
   mainWindow = new BrowserWindow({
-    show: false,
-    width: 1024,
-    height: 728
+    name: "NameFace",
+    width: 850,
+    height: 625,
+    toolbar: false,
+    resizable: false,
+    maximizable: false
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
@@ -59,7 +62,7 @@ app.on('ready', async () => {
   });
 
   if (process.env.NODE_ENV === 'development') {
-    mainWindow.openDevTools();
+    mainWindow.openDevTools({detach: true});
     mainWindow.webContents.on('context-menu', (e, props) => {
       const { x, y } = props;
 
